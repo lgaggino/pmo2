@@ -85,7 +85,7 @@ main {
     flex-direction: column;
 }
 
-#titulo {
+#titulo, #titulo_2 {
     font-size: 22px;
     font-weight: bold;
     font-family: "Roboto", sans-serif;
@@ -98,8 +98,9 @@ main {
     font-family: "Encode Sans", sans-serif;
     line-height: 2;
     padding: 6;
-    margin: 10px 25px 35px 88px;
+    margin: 10px 25px 35px 87px;
 }
+
 
 #texto-arriba {
     display: flex;
@@ -112,13 +113,9 @@ main {
     padding-top: 26px;
 }
 
-#titulo_2 {
+#texto-seccion {
     display: none;
-    font-size: 22px;
-    font-weight: bold;
-    font-family: "Roboto", sans-serif;
-    padding: 6;
-    margin: 10px 25px 10px 88px;
+
 }
 
 #p_linea {
@@ -134,7 +131,7 @@ main {
     color: #50535C;
     line-height: 1.1;
     font-size: 14px;
-    margin: 10px 25px 35px 88px;
+    margin: 0px 25px 10px 75px;
 }
 
 hr {
