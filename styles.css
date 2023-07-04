@@ -97,9 +97,8 @@ main {
     font-size: 16px;
     font-family: "Encode Sans", sans-serif;
     line-height: 2;
-    text-align: justify;
     padding: 6;
-    margin: 10px 25px 35px 68px;
+    margin: 10px 25px 35px 116px;
 }
 
 
@@ -116,12 +115,7 @@ main {
 
 #texto-seccion {
     display: none;
-    align-items: flex-start;
-    flex: 1;
-    flex-direction: column;
-    margin-left: 50px;
-    margin-right: 50px;
-    padding-top: 26px;
+
 }
 
 #p_linea {
