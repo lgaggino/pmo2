@@ -115,7 +115,12 @@ main {
 
 #texto-seccion {
     display: none;
-
+    align-items: flex-start;
+    flex: 1;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 26px;
 }
 
 #p_linea {
