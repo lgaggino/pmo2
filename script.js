@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 
     /* Cargar archivo json */
-    fetch('https://lgaggino.github.io/pmo/consolidado.json')
+    fetch('https://lgaggino.github.io/pmo2/consolidado.json')
     .then(response => response.json())
     .then(data => {
 
