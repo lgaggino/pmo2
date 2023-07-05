@@ -52,9 +52,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
                            '<p class="resultado">Recomendaciones de uso: ' + obj.recomendaciones + '</p>';
                 });
                 document.getElementById('texto-seccion').innerHTML = coberturas.join('<hr>');
-                
             } else {
                 alert('No se encontró el valor buscado');
+                setTimeout(function() {
+                    document.getElementById('texto-seccion').innerHTML = ''; // Limpia la sección de resultados después de cerrar el cuadro de diálogo de alerta
+                }, 100);
             }
         });
     })
