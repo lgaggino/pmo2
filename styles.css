@@ -27,7 +27,7 @@ body {
     width: 90%;
     height: auto;
     max-width: 1000px;
-   }
+}
 
 #header-content {
     display: flex;
@@ -38,10 +38,6 @@ body {
 main {
     display: flex;
     flex-direction: column;
-}
-
-#texto-seccion {
-    flex: 2; 
 }
 
 #buscador {
@@ -65,16 +61,14 @@ main {
     box-sizing: border-box; 
 }
 
+label[for="categoria"], label[for="busqueda"] {
+    font-size: 16px;
+    font-family: "Encode Sans", sans-serif;
+}
+
 #buscador button {
     padding: 10px 20px;
     width: 50%;
-}
-.separator, #buscador label {
-    font-size: 1px;
-    font-family: "Encode Sans", sans-serif;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 12px;
 }
 
 #buscador-seccion {
@@ -85,12 +79,17 @@ main {
     flex-direction: column;
 }
 
+select#categoria {
+    color: #757883;
+    font-family: "Roboto", sans-serif;
+}
+
 #titulo, #titulo_2 {
     font-size: 22px;
     font-weight: bold;
     font-family: "Roboto", sans-serif;
     padding: 6;
-    margin: 10px 25px 10px 88px;
+    margin: 10px 25px 10px 0px;
 }
 
 .parrafo {
@@ -98,9 +97,8 @@ main {
     font-family: "Encode Sans", sans-serif;
     line-height: 2;
     padding: 6;
-    margin: 10px 25px 35px 87px;
+    margin: 10px 25px 35px 0;
 }
-
 
 #texto-arriba {
     display: flex;
@@ -115,29 +113,28 @@ main {
 
 #texto-seccion {
     display: none;
-
 }
 
-#p_linea {
+.nombre-resultado {
     font-family: "Encode Sans", sans-serif;
     color: #50535C;
     line-height: 1.1;
     font-weight: bold;
     font-size: 16px;
-    margin: 0px 25px 10px 75px;
+    padding-left: 6;
+    margin: 10px 25px 10px 51px;
 }
+
 .resultado {
     font-family: "Encode Sans", sans-serif;
     color: #50535C;
     line-height: 1.1;
     font-size: 14px;
-    margin: 0px 25px 10px 75px;
+    margin: 0px 65px 10px 51px;
 }
 
 hr {
     width: 60%;
     border-top: 0.75px solid #37BBED;
-    margin: 20px 75px 20px 75px
+    margin: 20px 75px 20px 51px;
 }
-
-

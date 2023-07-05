@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (resultado.length > 0) {
                 document.getElementById('texto-seccion').style.display = 'block'; // Muestra la sección de resultados
                 var coberturas = resultado.map(function(obj) {
-                    return '<p id="p_linea"">'+ obj.nombre +'</p>' +
+                    return '<p class="nombre-resultado">'+ obj.nombre +'</p>' +
                            '<p class="resultado">CategorÍa: ' + obj.categoria + '</p>' +
                            '<p class="resultado">SubcategorÍa: ' + obj.subcategoria + '</p>' +
                            '<p class="resultado">Normativa que la incluye: ' + obj.norma + '</p>' +
