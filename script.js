@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                            '<p class="resultado"><b>Nivel de cobertura: ' + (obj.cobertura * 100) + '</b>%</p>' + // pasa a porcentaje
                            '<p class="resultado">Recomendaciones de uso: ' + obj.recomendaciones + '</p>';
                 });
-                document.getElementById('texto-seccion').innerHTML = coberturas.join('<hr>');
+                document.getElementById('texto-seccion').innerHTML = '<h2 class="titulo-resultado">Resultado de la búsqueda:</h2>' + coberturas.join('<hr>');
             } else {
                 alert('No se encontró el valor buscado');
                 setTimeout(function() {

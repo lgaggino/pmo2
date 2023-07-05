@@ -92,6 +92,13 @@ select#categoria {
     margin: 10px 25px 10px 0px;
 }
 
+.titulo-resultado {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    padding: 6px;
+    margin: 10px 25px 10px 45px;
+}
 .parrafo {
     font-size: 16px;
     font-family: "Encode Sans", sans-serif;
