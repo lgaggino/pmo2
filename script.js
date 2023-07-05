@@ -1,11 +1,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-
-    /* Cargar archivo json */
     fetch('https://lgaggino.github.io/pmo2/consolidado.json')
     .then(response => response.json())
     .then(data => {
-
-        /* Obtener categorías únicas para el desplegable */
         let categories = [...new Set(data.map(item => item.categoria))];
         let selectElement = document.getElementById('categoria');
         categories.forEach(category => {
@@ -15,23 +11,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
             selectElement.appendChild(optionElement);
         });
 
-        /* Cuando el campo de búsqueda cambia, vacía el desplegable */
         document.getElementById('busqueda').addEventListener('input', function(e) {
             document.getElementById('categoria').value = '';
         });
 
-        /* Cuando el desplegable cambia, vacía el campo de búsqueda */
         document.getElementById('categoria').addEventListener('change', function(e) {
             document.getElementById('busqueda').value = '';
         });
 
         document.getElementById('buscador').addEventListener('submit', function(e) {
-            e.preventDefault(); // Evita que la página se recargue al enviar el formulario
-
+            e.preventDefault();
+            document.getElementById('texto-seccion').innerHTML = ''; // limpia los resultados anteriores
             var valorBuscado = document.getElementById('busqueda').value;
             var valorCategoria = document.getElementById('categoria').value;
 
-            /* Busca el valor en el dataset */
             var resultado = data.filter(function(obj) {
                 if (valorBuscado !== "") {
                     return obj.nombre.toLowerCase().includes(valorBuscado.toLowerCase()) || obj.categoria.toLowerCase().includes(valorBuscado.toLowerCase());
@@ -40,23 +33,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 }
             });
 
-            /* Si se encontró al menos un resultado, muestra el valor de la columna "cobertura" */
             if (resultado.length > 0) {
-                document.getElementById('texto-seccion').style.display = 'block'; // Muestra la sección de resultados
+                document.getElementById('texto-seccion').style.display = 'block';
                 var coberturas = resultado.map(function(obj) {
                     return '<p class="nombre-resultado">'+ obj.nombre +'</p>' +
                            '<p class="resultado">CategorÍa: ' + obj.categoria + '</p>' +
                            '<p class="resultado">SubcategorÍa: ' + obj.subcategoria + '</p>' +
                            '<p class="resultado">Normativa que la incluye: ' + obj.norma + '</p>' +
-                           '<p class="resultado"><b>Nivel de cobertura: ' + (obj.cobertura * 100) + '</b>%</p>' + // pasa a porcentaje
+                           '<p class="resultado"><b>Nivel de cobertura: ' + (obj.cobertura * 100) + '</b>%</p>' +
                            '<p class="resultado">Recomendaciones de uso: ' + obj.recomendaciones + '</p>';
                 });
-                document.getElementById('texto-seccion').innerHTML = '<h2 class="titulo-resultado">Resultado de la búsqueda:</h2>' + coberturas.join('<hr>');
+                document.getElementById('texto-seccion').innerHTML = `<h2 class="titulo-resultado">Resultado de la búsqueda: ${resultado.length} prestaciones encontradas</h2>` + coberturas.join('<hr>');
             } else {
                 alert('No se encontró el valor buscado');
-                setTimeout(function() {
-                    document.getElementById('texto-seccion').innerHTML = ''; // Limpia la sección de resultados después de cerrar el cuadro de diálogo de alerta
-                }, 100);
             }
         });
     })
