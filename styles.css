@@ -61,7 +61,7 @@ main {
     box-sizing: border-box; 
 }
 
-label[for="categoria"], label[for="busqueda"] {
+label[for="categoria"], label[for="busqueda"], .texto-o {
     font-size: 16px;
     font-family: "Encode Sans", sans-serif;
 }

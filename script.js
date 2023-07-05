@@ -36,14 +36,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (resultado.length > 0) {
                 document.getElementById('texto-seccion').style.display = 'block';
                 var coberturas = resultado.map(function(obj) {
+                    var coberturaText;
+                    if (isNumeric(obj.cobertura)) {
+                      coberturaText = (obj.cobertura * 100) + '%';
+                    } else {
+                      coberturaText = obj.cobertura;
+                    }
                     return '<p class="nombre-resultado">'+ obj.nombre +'</p>' +
                            '<p class="resultado">CategorÍa: ' + obj.categoria + '</p>' +
                            '<p class="resultado">SubcategorÍa: ' + obj.subcategoria + '</p>' +
                            '<p class="resultado">Normativa que la incluye: ' + obj.norma + '</p>' +
-                           '<p class="resultado"><b>Nivel de cobertura: ' + (obj.cobertura * 100) + '</b>%</p>' +
+                           '<p class="resultado"><b>Nivel de cobertura: ' + coberturaText + '</b></p>' +
                            '<p class="resultado">Recomendaciones de uso: ' + obj.recomendaciones + '</p>';
                 });
-                document.getElementById('texto-seccion').innerHTML = `<h2 class="titulo-resultado">Resultado de la búsqueda: ${resultado.length} prestaciones encontradas</h2>` + coberturas.join('<hr>');
+                document.getElementById('texto-seccion').innerHTML = `<h2 class="titulo-resultado">Resultado de la búsqueda: ${resultado.length} resultados encontrados</h2>` + coberturas.join('<hr>');
             } else {
                 alert('No se encontró el valor buscado');
             }
@@ -51,3 +57,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     })
     .catch(error => console.error('Error:', error));
 });
+
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
